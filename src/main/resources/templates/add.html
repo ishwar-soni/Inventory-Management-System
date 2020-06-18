@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="www.thymeleaf.org"
+>
+	<head>
+		<title>Add Product</title>
+		<link rel="stylesheet" th:href="@{/css/add.css}"/>
+	</head>
+	
+	<body>
+		<div class="outer_wrapper">
+			<div class="heading_block">
+				<img class="image" th:src="@{/images/logo.png}">
+				<h1 class="heading">Inventory Management System</h1>
+			</div>
+			<hr class="partition">
+			<form method="post" th:object="${product}">
+				<table class="table">
+					<tr>
+						<td><label for="code">Code: </label></td>
+						<td><input type="text" th:field="*{code}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label for="name">Name: </label></td>
+						<td><input type="text" th:field="*{name}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label for="category">Category: </label></td>
+						<td><input type="text" th:field="*{category}"/></td>
+					</tr>
+					
+					<tr>
+						<td><label for="quantity">Quantity: </label></td>
+						<td><input type="text" th:field="*{quantity}"/></td>
+					</tr>
+					
+					<tr>
+						<td><input type="submit" value="Add"/></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>

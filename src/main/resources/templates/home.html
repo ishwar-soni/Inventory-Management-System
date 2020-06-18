@@ -5,10 +5,37 @@
 >
 	<head>
 		<title>Inventory Management System</title>
+		<link rel="stylesheet" th:href="@{/css/home.css}"/>
 	</head>
 	
 	<body>
-		<h1>Hi</h1>
+		<div class="outer_wrapper">
+			<div class="heading_block">
+				<img class="image" th:src="@{/images/logo.png}">
+				<h1 class="heading">Inventory Management System</h1>
+			</div>
+			<hr class="partition">
+			<table class="table">
+				<tr>
+					<th>Code</th>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Quantity</th>
+				</tr>
+				
+				<tr th:each="product:${products}">
+					<td th:text="${product.code}"></td>
+					<td th:text="${product.name}"></td>
+					<td th:text="${product.category}"></td>
+					<td th:text="${product.quantity}"></td>
+				</tr>
+			</table>			
+			
+			<br/>
+			
+			<input type="submit" value="Add" class="add_button" onclick="location.href='/add'">
+			
+		</div>
 	</body>
 	
 </html>
